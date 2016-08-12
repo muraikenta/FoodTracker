@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let realm = try! Realm()
+        if let currentUser = realm.objects(Session).first {
+            Alamofire
+                .request(.GET, "http://localhost:3002/api/auth/validate_token", parameters: currentUser.sessionParams())
+                .responseJSON { response in
+                    switch response.result {
+                    case .Success:
+                        switch response.response!.statusCode {
+                        case 200:
+                            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            self.window?.rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("TabBarController")
+                        case 401:
+                            try! realm.write {
+                                realm.delete(currentUser)
+                            }
+                        default:
+                            print(response)
+                        }
+                    case .Failure(let error):
+                        print(error)
+                    }
+            }
+        }
+
         return true
     }
 
