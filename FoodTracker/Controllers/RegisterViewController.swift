@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import ObjectMapper
 import RealmSwift
+import Dollar
 
 class RegisterViewController: UIViewController {
     
@@ -21,9 +22,10 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        _ = Meal(name: "hoge", photo: UIImage(), rating: 4)!
     }
 
-    
+    // MARK: Actions
     @IBAction func register(sender: AnyObject) {
         let parameters = [
             "name": self.nameField.text ?? "",
@@ -35,13 +37,11 @@ class RegisterViewController: UIViewController {
             .responseJSON { response in
                 if response.response!.statusCode == 200 {
                     let headers = response.response!.allHeaderFields
-                    let headersJson = JSON(headers)
-                    
-                    let session = Mapper<Session>().map(headersJson.dictionaryObject)!
-                    
+                    let headerJson = JSON(headers)
                     let bodyJson = JSON(response.result.value!)["data"]
-                    session.setValue(bodyJson["name"].stringValue, forKey: "name")
-                    session.setValue(bodyJson["email"].stringValue, forKey: "email")
+                    let sessionParams = $.merge(headerJson.dictionaryObject!, bodyJson.dictionaryObject!)
+                    
+                    let session = Mapper<Session>().map(sessionParams)!
                     
                     let realm = try! Realm()
                     try! realm.write {

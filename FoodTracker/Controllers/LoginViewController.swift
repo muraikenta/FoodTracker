@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import ObjectMapper
 import RealmSwift
+import Dollar
 
 class LoginViewController: UIViewController {
     
@@ -18,11 +19,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailFileld: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    func afterLogin() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarController = mainStoryboard.instantiateViewControllerWithIdentifier("TabBarController")
+        self.presentViewController(tabBarController, animated: true, completion: nil)
+    }
+    
+    // MARK: Actions
     @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
     }
     
@@ -36,17 +43,18 @@ class LoginViewController: UIViewController {
             .responseJSON { response in
                 if response.response!.statusCode == 200 {
                     let headers = response.response!.allHeaderFields
-                    let headersJson = JSON(headers)
-                    let session = Mapper<Session>().map(headersJson.dictionaryObject)!
+                    let headerJson = JSON(headers)
+                    let bodyJson = JSON(response.result.value!)["data"]
+                    let sessionParams = $.merge(headerJson.dictionaryObject!, bodyJson.dictionaryObject!)
+
+                    let session = Mapper<Session>().map(sessionParams)!
                     
                     let realm = try! Realm()
                     try! realm.write {
                         realm.add(session)
                     }
                     
-                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let tabBarController = mainStoryboard.instantiateViewControllerWithIdentifier("TabBarController")
-                    self.presentViewController(tabBarController, animated: true, completion: nil)
+                    self.afterLogin()
                 } else {
                     let alertController = UIAlertController(title: "メールアドレスまたはパスワードが違います", message: "", preferredStyle: .Alert)
                     let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
