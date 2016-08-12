@@ -49,8 +49,8 @@ class RegisterViewController: UIViewController {
                     }
                     
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let mealTableViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MealTableViewNavigator") as! UINavigationController
-                    self.presentViewController(mealTableViewController, animated: true, completion: nil)
+                    let tabBarController = mainStoryboard.instantiateViewControllerWithIdentifier("TabBarController")
+                    self.presentViewController(tabBarController, animated: true, completion: nil)
                 } else {
                     let alertController = UIAlertController(title: "メールアドレスまたはパスワードが違います", message: "", preferredStyle: .Alert)
                     let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
