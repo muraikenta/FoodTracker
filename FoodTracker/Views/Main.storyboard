@@ -140,11 +140,11 @@
             </objects>
             <point key="canvasLocation" x="1867" y="324"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="34l-ZS-qlk">
             <objects>
                 <navigationController storyboardIdentifier="MealTableViewNavigator" automaticallyAdjustsScrollViewInsets="NO" id="obr-nW-sEw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ocN-vO-ezM"/>
+                    <tabBarItem key="tabBarItem" image="home" id="ocN-vO-ezM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hwA-fi-3vp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -159,7 +159,7 @@
             </objects>
             <point key="canvasLocation" x="-410" y="324"/>
         </scene>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="MqZ-Eb-TuS">
             <objects>
                 <viewController id="kel-Vu-EVu" sceneMemberID="viewController">
@@ -172,7 +172,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="f1V-nl-b8Z"/>
+                    <tabBarItem key="tabBarItem" title="" image="user" id="f1V-nl-b8Z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFm-xi-n9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -217,6 +217,8 @@
     </scenes>
     <resources>
         <image name="defaultPhoto" width="250" height="250"/>
+        <image name="home" width="25" height="25"/>
+        <image name="user" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yEb-ig-4rK"/>
