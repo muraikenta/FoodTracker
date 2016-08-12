@@ -12,7 +12,7 @@ import SwiftyJSON
 import ObjectMapper
 import RealmSwift
 
-class LoginController: UIViewController {
+class LoginViewController: UIViewController {
     
     // MARK: Properties
     

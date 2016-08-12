@@ -11,6 +11,17 @@
 		2437732F1D4650EE00D0586B /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2437732E1D4650EE00D0586B /* MealTableViewCell.swift */; };
 		243773311D46577600D0586B /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243773301D46577600D0586B /* MealTableViewController.swift */; };
 		24494F021D4A47940003F5A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24494F011D4A47940003F5A6 /* Main.storyboard */; };
+		248EC4541D5DB32B001307BC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 248EC4531D5DB32B001307BC /* Login.storyboard */; };
+		248EC4561D5DB3C9001307BC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EC4551D5DB3C9001307BC /* RegisterViewController.swift */; };
+		24C22D941D56283200066B2C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D8F1D56283200066B2C /* Alamofire.framework */; };
+		24C22D951D56283200066B2C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D901D56283200066B2C /* ObjectMapper.framework */; };
+		24C22D961D56283200066B2C /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D911D56283200066B2C /* RxCocoa.framework */; };
+		24C22D971D56283200066B2C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D921D56283200066B2C /* RxSwift.framework */; };
+		24C22D981D56283200066B2C /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D931D56283200066B2C /* SwiftyJSON.framework */; };
+		24C22D9B1D5628F900066B2C /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D9A1D5628F900066B2C /* RxBlocking.framework */; };
+		24C22D9D1D58585F00066B2C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C22D9C1D58585F00066B2C /* Session.swift */; };
+		24C22DA01D5858B100066B2C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D9E1D5858B100066B2C /* Realm.framework */; };
+		24C22DA11D5858B100066B2C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D9F1D5858B100066B2C /* RealmSwift.framework */; };
 		24CAA4481D425B870075353A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CAA4471D425B870075353A /* AppDelegate.swift */; };
 		24CAA44A1D425B870075353A /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CAA4491D425B870075353A /* MealViewController.swift */; };
 		24CAA44F1D425B870075353A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CAA44E1D425B870075353A /* Assets.xcassets */; };
@@ -19,7 +30,7 @@
 		24ECAA221D44E5B40055BE62 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ECAA211D44E5B40055BE62 /* Meal.swift */; };
 		24ECAA481D44EF090055BE62 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24ECAA3C1D44EB730055BE62 /* Info.plist */; };
 		24ECAA4B1D44F08A0055BE62 /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ECAA3A1D44EB730055BE62 /* FoodTrackerTests.swift */; };
-		24FA751E1D54DB6C00544704 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA751D1D54DB6C00544704 /* LoginController.swift */; };
+		24FA751E1D54DB6C00544704 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA751D1D54DB6C00544704 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +47,18 @@
 		2416B3451D4F82BF00A91D4E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2437732E1D4650EE00D0586B /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealTableViewCell.swift; path = ../MealTableViewCell.swift; sourceTree = "<group>"; };
 		243773301D46577600D0586B /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealTableViewController.swift; path = ../MealTableViewController.swift; sourceTree = "<group>"; };
-		24494F011D4A47940003F5A6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
+		24494F011D4A47940003F5A6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		248EC4531D5DB32B001307BC /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		248EC4551D5DB3C9001307BC /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		24C22D8F1D56283200066B2C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		24C22D901D56283200066B2C /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		24C22D911D56283200066B2C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		24C22D921D56283200066B2C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		24C22D931D56283200066B2C /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		24C22D9A1D5628F900066B2C /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		24C22D9C1D58585F00066B2C /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		24C22D9E1D5858B100066B2C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		24C22D9F1D5858B100066B2C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		24CAA4441D425B870075353A /* FoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CAA4471D425B870075353A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24CAA4491D425B870075353A /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MealViewController.swift; path = ../MealViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +70,7 @@
 		24ECAA381D44EB730055BE62 /* FoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24ECAA3A1D44EB730055BE62 /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
 		24ECAA3C1D44EB730055BE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24FA751D1D54DB6C00544704 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		24FA751D1D54DB6C00544704 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +78,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C22DA01D5858B100066B2C /* Realm.framework in Frameworks */,
+				24C22DA11D5858B100066B2C /* RealmSwift.framework in Frameworks */,
+				24C22D9B1D5628F900066B2C /* RxBlocking.framework in Frameworks */,
+				24C22D941D56283200066B2C /* Alamofire.framework in Frameworks */,
+				24C22D951D56283200066B2C /* ObjectMapper.framework in Frameworks */,
+				24C22D961D56283200066B2C /* RxCocoa.framework in Frameworks */,
+				24C22D971D56283200066B2C /* RxSwift.framework in Frameworks */,
+				24C22D981D56283200066B2C /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +104,8 @@
 			children = (
 				243773301D46577600D0586B /* MealTableViewController.swift */,
 				24CAA4491D425B870075353A /* MealViewController.swift */,
-				24FA751D1D54DB6C00544704 /* LoginController.swift */,
+				24FA751D1D54DB6C00544704 /* LoginViewController.swift */,
+				248EC4551D5DB3C9001307BC /* RegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -83,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				24ECAA211D44E5B40055BE62 /* Meal.swift */,
+				24C22D9C1D58585F00066B2C /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -94,6 +126,7 @@
 				24CAA4501D425B870075353A /* LaunchScreen.storyboard */,
 				2437732E1D4650EE00D0586B /* MealTableViewCell.swift */,
 				24ECAA1F1D44C5390055BE62 /* RatingControl.swift */,
+				248EC4531D5DB32B001307BC /* Login.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +148,14 @@
 		24CAA43B1D425B870075353A = {
 			isa = PBXGroup;
 			children = (
+				24C22D9E1D5858B100066B2C /* Realm.framework */,
+				24C22D9F1D5858B100066B2C /* RealmSwift.framework */,
+				24C22D9A1D5628F900066B2C /* RxBlocking.framework */,
+				24C22D8F1D56283200066B2C /* Alamofire.framework */,
+				24C22D901D56283200066B2C /* ObjectMapper.framework */,
+				24C22D911D56283200066B2C /* RxCocoa.framework */,
+				24C22D921D56283200066B2C /* RxSwift.framework */,
+				24C22D931D56283200066B2C /* SwiftyJSON.framework */,
 				24CAA4461D425B870075353A /* FoodTracker */,
 				24ECAA391D44EB730055BE62 /* FoodTrackerTests */,
 				24CAA4451D425B870075353A /* Products */,
@@ -165,6 +206,7 @@
 				24CAA4401D425B870075353A /* Sources */,
 				24CAA4411D425B870075353A /* Frameworks */,
 				24CAA4421D425B870075353A /* Resources */,
+				24C22D991D56284800066B2C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -243,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24494F021D4A47940003F5A6 /* Main.storyboard in Resources */,
+				248EC4541D5DB32B001307BC /* Login.storyboard in Resources */,
 				24CAA4521D425B870075353A /* LaunchScreen.storyboard in Resources */,
 				24CAA44F1D425B870075353A /* Assets.xcassets in Resources */,
 			);
@@ -258,17 +301,43 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		24C22D991D56284800066B2C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		24CAA4401D425B870075353A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				24ECAA221D44E5B40055BE62 /* Meal.swift in Sources */,
+				248EC4561D5DB3C9001307BC /* RegisterViewController.swift in Sources */,
 				24CAA44A1D425B870075353A /* MealViewController.swift in Sources */,
 				24ECAA201D44C5390055BE62 /* RatingControl.swift in Sources */,
 				24CAA4481D425B870075353A /* AppDelegate.swift in Sources */,
 				2416B3461D4F82BF00A91D4E /* Constants.swift in Sources */,
-				24FA751E1D54DB6C00544704 /* LoginController.swift in Sources */,
+				24C22D9D1D58585F00066B2C /* Session.swift in Sources */,
+				24FA751E1D54DB6C00544704 /* LoginViewController.swift in Sources */,
 				243773311D46577600D0586B /* MealTableViewController.swift in Sources */,
 				2437732F1D4650EE00D0586B /* MealTableViewCell.swift in Sources */,
 			);
@@ -396,6 +465,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -412,6 +485,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
