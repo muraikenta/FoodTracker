@@ -7,29 +7,57 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import ObjectMapper
+import RealmSwift
 
 class RegisterViewController: UIViewController {
-
+    
+    // MARK: Properties
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    @IBAction func register(sender: AnyObject) {
+        let parameters = [
+            "name": self.nameField.text ?? "",
+            "email": self.emailField.text ?? "",
+            "password": self.passwordField.text ?? "",
+            ]
+        Alamofire
+            .request(.POST, "http://localhost:3002/api/auth/", parameters: parameters)
+            .responseJSON { response in
+                if response.response!.statusCode == 200 {
+                    let headers = response.response!.allHeaderFields
+                    let headersJson = JSON(headers)
+                    
+                    let session = Mapper<Session>().map(headersJson.dictionaryObject)!
+                    
+                    let bodyJson = JSON(response.result.value!)["data"]
+                    session.setValue(bodyJson["email"].stringValue, forKey: "email")
+                    
+                    let realm = try! Realm()
+                    try! realm.write {
+                        realm.add(session)
+                    }
+                    
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mealTableViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MealTableViewNavigator") as! UINavigationController
+                    self.presentViewController(mealTableViewController, animated: true, completion: nil)
+                } else {
+                    let alertController = UIAlertController(title: "メールアドレスまたはパスワードが違います", message: "", preferredStyle: .Alert)
+                    let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alertController.addAction(action)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+            }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }
