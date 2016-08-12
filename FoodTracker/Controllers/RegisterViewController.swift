@@ -40,6 +40,7 @@ class RegisterViewController: UIViewController {
                     let session = Mapper<Session>().map(headersJson.dictionaryObject)!
                     
                     let bodyJson = JSON(response.result.value!)["data"]
+                    session.setValue(bodyJson["name"].stringValue, forKey: "name")
                     session.setValue(bodyJson["email"].stringValue, forKey: "email")
                     
                     let realm = try! Realm()
