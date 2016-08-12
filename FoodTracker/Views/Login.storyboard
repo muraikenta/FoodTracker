@@ -36,7 +36,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ll-4i-xSs">
                                         <rect key="frame" x="0.0" y="79" width="560" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ED6-11-6JH">
                                         <rect key="frame" x="0.0" y="121" width="560" height="30"/>
@@ -74,6 +74,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7Zh-5E-Py5"/>
+                    <connections>
+                        <outlet property="emailFileld" destination="4At-lC-QUB" id="Twe-tV-vpK"/>
+                        <outlet property="passwordField" destination="5Ll-4i-xSs" id="n78-UT-7Ob"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-87" y="-492"/>

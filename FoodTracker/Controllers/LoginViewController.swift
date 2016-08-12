@@ -15,6 +15,8 @@ import RealmSwift
 class LoginViewController: UIViewController {
     
     // MARK: Properties
+    @IBOutlet weak var emailFileld: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     
     
     @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
@@ -22,8 +24,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(sender: UIButton) {
         let parameters = [
-            "email": "muraikenta0507@gmail.com",
-            "password": "hogehogehoge",
+            "email": self.emailFileld.text ?? "",
+            "password": self.passwordField.text ?? "",
         ]
         Alamofire
             .request(.POST, "http://localhost:3002/api/auth/sign_in", parameters: parameters)
@@ -37,6 +39,10 @@ class LoginViewController: UIViewController {
                     try! realm.write {
                         realm.add(session)
                     }
+                    
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let mealTableViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MealTableViewNavigator") as! UINavigationController
+                    self.presentViewController(mealTableViewController, animated: true, completion: nil)
                 } else {
                     let alertController = UIAlertController(title: "メールアドレスまたはパスワードが違います", message: "", preferredStyle: .Alert)
                     let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
@@ -44,8 +50,6 @@ class LoginViewController: UIViewController {
                     self.presentViewController(alertController, animated: true, completion: nil)
                 }
             }
-        // let mealTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MealTableViewNavigator") as! UINavigationController
-        // self.presentViewController(mealTableViewController, animated: true, completion: nil)
     }
 
 }
