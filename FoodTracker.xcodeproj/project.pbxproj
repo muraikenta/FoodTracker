@@ -16,6 +16,7 @@
 		248EC4581D5E1F6E001307BC /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248EC4571D5E1F6E001307BC /* Dollar.framework */; };
 		248EC45A1D5E2D54001307BC /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EC4591D5E2D54001307BC /* profileViewController.swift */; };
 		248EC45E1D5E3A60001307BC /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EC45B1D5E32B4001307BC /* ImageHelper.swift */; };
+		248EC4601D5F03CE001307BC /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EC45F1D5F03CE001307BC /* AuthHelper.swift */; };
 		24C22D941D56283200066B2C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D8F1D56283200066B2C /* Alamofire.framework */; };
 		24C22D951D56283200066B2C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D901D56283200066B2C /* ObjectMapper.framework */; };
 		24C22D961D56283200066B2C /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D911D56283200066B2C /* RxCocoa.framework */; };
@@ -56,6 +57,7 @@
 		248EC4571D5E1F6E001307BC /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = Carthage/Build/iOS/Dollar.framework; sourceTree = "<group>"; };
 		248EC4591D5E2D54001307BC /* profileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		248EC45B1D5E32B4001307BC /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		248EC45F1D5F03CE001307BC /* AuthHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
 		24C22D8F1D56283200066B2C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		24C22D901D56283200066B2C /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		24C22D911D56283200066B2C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				248EC45B1D5E32B4001307BC /* ImageHelper.swift */,
+				248EC45F1D5F03CE001307BC /* AuthHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				24FA751E1D54DB6C00544704 /* LoginViewController.swift in Sources */,
 				243773311D46577600D0586B /* MealTableViewController.swift in Sources */,
 				2437732F1D4650EE00D0586B /* MealTableViewCell.swift in Sources */,
+				248EC4601D5F03CE001307BC /* AuthHelper.swift in Sources */,
 				248EC45E1D5E3A60001307BC /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

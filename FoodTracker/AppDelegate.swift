@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     case .Failure(let error):
                         print(error)
                     }
-            }
+                }
         }
 
         return true

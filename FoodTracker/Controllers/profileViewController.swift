@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Alamofire
 
 class profileViewController: UIViewController, UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
     
@@ -33,6 +34,30 @@ class profileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let imageURL = info[UIImagePickerControllerReferenceURL]
+        {
+            let imagePicked = info[UIImagePickerControllerOriginalImage] as! UIImage
+            let imagePickedData: NSData = UIImageJPEGRepresentation(imagePicked, 0.3)!
+            Alamofire.upload(
+                .PATCH,
+                "http://localhost:3002/api/sessions/update_image",
+                headers: AuthHelper.authHeaders(),
+                multipartFormData: { multipartFormData in
+                    multipartFormData.appendBodyPart(data: imagePickedData, name: "binary")
+                },
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .Success(let upload, _, _):
+                        upload.responseJSON { response in
+                            debugPrint(response)
+                        }
+                    case .Failure(let encodingError):
+                        print(encodingError)
+                    }
+                }
+            )
+
+        }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
