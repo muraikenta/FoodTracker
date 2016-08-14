@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import Alamofire
 import SwiftyJSON
+import WebImage
 
 class profileViewController: UIViewController, UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
     
@@ -24,7 +25,7 @@ class profileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let currentUser: Session? = SessionHelper.currentUser()
         self.nameLabel.text = currentUser!.name
         if let imageUrl = currentUser!.image {
-            ImageHelper.loadImageFromUrl(imageUrl, view: userImage)
+            self.userImage.sd_setImageWithURL(NSURL(string: imageUrl))
         }
     }
     

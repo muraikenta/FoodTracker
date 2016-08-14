@@ -15,9 +15,9 @@
 		248EC4561D5DB3C9001307BC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EC4551D5DB3C9001307BC /* RegisterViewController.swift */; };
 		248EC4581D5E1F6E001307BC /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248EC4571D5E1F6E001307BC /* Dollar.framework */; };
 		248EC45A1D5E2D54001307BC /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EC4591D5E2D54001307BC /* profileViewController.swift */; };
-		248EC45E1D5E3A60001307BC /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EC45B1D5E32B4001307BC /* ImageHelper.swift */; };
 		248EC4601D5F03CE001307BC /* SessionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EC45F1D5F03CE001307BC /* SessionHelper.swift */; };
 		248EC4621D604C2B001307BC /* Regexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EC4611D604C2B001307BC /* Regexp.swift */; };
+		248EC4641D60CDAD001307BC /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248EC4631D60CDAD001307BC /* WebImage.framework */; };
 		24C22D941D56283200066B2C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D8F1D56283200066B2C /* Alamofire.framework */; };
 		24C22D951D56283200066B2C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D901D56283200066B2C /* ObjectMapper.framework */; };
 		24C22D981D56283200066B2C /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C22D931D56283200066B2C /* SwiftyJSON.framework */; };
@@ -54,9 +54,9 @@
 		248EC4551D5DB3C9001307BC /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		248EC4571D5E1F6E001307BC /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = Carthage/Build/iOS/Dollar.framework; sourceTree = "<group>"; };
 		248EC4591D5E2D54001307BC /* profileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
-		248EC45B1D5E32B4001307BC /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		248EC45F1D5F03CE001307BC /* SessionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionHelper.swift; sourceTree = "<group>"; };
 		248EC4611D604C2B001307BC /* Regexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regexp.swift; sourceTree = "<group>"; };
+		248EC4631D60CDAD001307BC /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		24C22D8F1D56283200066B2C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		24C22D901D56283200066B2C /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		24C22D911D56283200066B2C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -85,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				248EC4641D60CDAD001307BC /* WebImage.framework in Frameworks */,
 				248EC4581D5E1F6E001307BC /* Dollar.framework in Frameworks */,
 				24C22DA01D5858B100066B2C /* Realm.framework in Frameworks */,
 				24C22DA11D5858B100066B2C /* RealmSwift.framework in Frameworks */,
@@ -147,7 +148,6 @@
 		2416B3441D4F7F1700A91D4E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				248EC45B1D5E32B4001307BC /* ImageHelper.swift */,
 				248EC45F1D5F03CE001307BC /* SessionHelper.swift */,
 				248EC4611D604C2B001307BC /* Regexp.swift */,
 			);
@@ -157,6 +157,7 @@
 		24CAA43B1D425B870075353A = {
 			isa = PBXGroup;
 			children = (
+				248EC4631D60CDAD001307BC /* WebImage.framework */,
 				248EC4571D5E1F6E001307BC /* Dollar.framework */,
 				24C22D9E1D5858B100066B2C /* Realm.framework */,
 				24C22D9F1D5858B100066B2C /* RealmSwift.framework */,
@@ -324,6 +325,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Dollar.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/WebImage.framework",
 			);
 			outputPaths = (
 			);
@@ -351,7 +353,6 @@
 				243773311D46577600D0586B /* MealTableViewController.swift in Sources */,
 				2437732F1D4650EE00D0586B /* MealTableViewCell.swift in Sources */,
 				248EC4601D5F03CE001307BC /* SessionHelper.swift in Sources */,
-				248EC45E1D5E3A60001307BC /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
