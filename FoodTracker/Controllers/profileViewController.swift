@@ -39,6 +39,8 @@ class profileViewController: UIViewController, UIImagePickerControllerDelegate, 
             let imagePicked = info[UIImagePickerControllerOriginalImage] as! UIImage
             let imagePickedData: NSData!
             
+            self.userImage.image = imagePicked
+            
             if Regexp("(JPG|JPEG)").isMatch(imageURL.absoluteString) {
                 imagePickedData = UIImageJPEGRepresentation(imagePicked, 0.3)!
             } else {
