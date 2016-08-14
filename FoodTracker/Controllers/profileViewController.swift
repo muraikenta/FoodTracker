@@ -37,7 +37,13 @@ class profileViewController: UIViewController, UIImagePickerControllerDelegate, 
         if let imageURL = info[UIImagePickerControllerReferenceURL]
         {
             let imagePicked = info[UIImagePickerControllerOriginalImage] as! UIImage
-            let imagePickedData: NSData = UIImageJPEGRepresentation(imagePicked, 0.3)!
+            let imagePickedData: NSData!
+            
+            if Regexp("(JPG|JPEG)").isMatch(imageURL.absoluteString) {
+                imagePickedData = UIImageJPEGRepresentation(imagePicked, 0.3)!
+            } else {
+                imagePickedData = UIImagePNGRepresentation(imagePicked)
+            }
             Alamofire.upload(
                 .PATCH,
                 "http://localhost:3002/api/sessions/update_image",
