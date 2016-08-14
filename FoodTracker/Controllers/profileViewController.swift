@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import Alamofire
+import SwiftyJSON
 
 class profileViewController: UIViewController, UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
     
@@ -20,11 +21,9 @@ class profileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let realm = try! Realm()
-        let currentUser = realm.objects(Session).first!
-
-        self.nameLabel.text = currentUser.name
-        if let imageUrl = currentUser.image {
+        let currentUser: Session? = SessionHelper.currentUser()
+        self.nameLabel.text = currentUser!.name
+        if let imageUrl = currentUser!.image {
             ImageHelper.loadImageFromUrl(imageUrl, view: userImage)
         }
     }
@@ -34,7 +33,7 @@ class profileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let imageURL = info[UIImagePickerControllerReferenceURL]
+        if let imageURL = info[UIImagePickerControllerReferenceURL] as? NSURL
         {
             let imagePicked = info[UIImagePickerControllerOriginalImage] as! UIImage
             let imagePickedData: NSData!
@@ -49,7 +48,7 @@ class profileViewController: UIViewController, UIImagePickerControllerDelegate, 
             Alamofire.upload(
                 .PATCH,
                 "http://localhost:3002/api/sessions/update_image",
-                headers: AuthHelper.authHeaders(),
+                headers: SessionHelper.authHeaders(),
                 multipartFormData: { multipartFormData in
                     multipartFormData.appendBodyPart(data: imagePickedData, name: "binary")
                 },
@@ -57,7 +56,11 @@ class profileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     switch encodingResult {
                     case .Success(let upload, _, _):
                         upload.responseJSON { response in
-                            debugPrint(response)
+                            let currentUser: Session? = SessionHelper.currentUser()
+                            let realm = try! Realm()
+                            try! realm.write {
+                                currentUser?.image = JSON(response.result.value!)["image"].stringValue
+                            }
                         }
                     case .Failure(let encodingError):
                         print(encodingError)

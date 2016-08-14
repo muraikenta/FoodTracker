@@ -9,7 +9,12 @@
 import Foundation
 import RealmSwift
 
-class AuthHelper {
+class SessionHelper {
+    static func currentUser() -> Session? {
+        let realm = try! Realm()
+        return realm.objects(Session).first
+    }
+    
     static func authHeaders() -> [String: String]? {
         let realm = try! Realm()
         if let currentUser = realm.objects(Session).first {
